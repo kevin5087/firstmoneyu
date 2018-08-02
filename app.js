@@ -4,7 +4,28 @@ const https = require('https');
 let name;
 
 
-
+app.use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  );
+  
+  app.use(bodyParser.json());
+  
+  app.post("/echo", function(req, res) {
+    var speech =
+      req.body.result &&
+      req.body.result.parameters &&
+      req.body.result.parameters.echoText
+        ? req.body.result.parameters.echoText
+        : "Seems like some problem. Speak again.";
+    return res.json({
+      speech: speech,
+      displayText: speech,
+      source: "webhook-echo-sample"
+    });
+  });
+  
 
 
 https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
@@ -36,19 +57,7 @@ app.get("/rank/:id", function(req, res) {
 
     restService.use(bodyParser.json());
 
-app.post("/rank/:id", function(req, res) {
-  var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.id
-      ? req.body.result.parameters.id
-      : "Seems like some problem. Speak again.";
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
-  });
-});
+
     
        
 });
