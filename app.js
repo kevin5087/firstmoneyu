@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express(); //建立一個Express伺服器
 const https = require('https');
+const bodyParser = require("body-parser");
 let name;
 
 
@@ -55,7 +56,6 @@ app.get("/rank/:id", function(req, res) {
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);
 
-    restService.use(bodyParser.json());
 
 
     
