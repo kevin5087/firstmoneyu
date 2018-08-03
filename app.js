@@ -30,13 +30,24 @@ resp.on('end', () => {
 
 app.post("/rank/:id", function(req, res) {
     // console.log('xxxxxxxxx', name);
+    //var speech =
+    //req.body.result.parameters.id;
+    
     const test = Object.values(name.data);
     const id = req.params.id; 
     console.log('id', Number(id));
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
-       
+    
+    return res.json({
+      speech: mater,
+      displayText: master,
+      source: "webhook-echo-sample"
+    });
 });
+
+
+
 
 
   app.listen(3000, function () {
