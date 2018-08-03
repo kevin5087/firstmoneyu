@@ -4,9 +4,16 @@
 const express = require('express');
 const app = express(); //建立一個Express伺服器
 const https = require('https');
+const bodyParser = require("body-parser");
 let name;
 
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 
+app.use(bodyParser.json());
 
 
 https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
