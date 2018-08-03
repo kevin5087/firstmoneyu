@@ -49,6 +49,12 @@ app.post("/rank", function(req, res) {
     const mater = test.filter( number => number.rank === speech);
     console.log('aa', mater);  
     
+    return res.json({
+      speech: speech,
+      displayText: speech,
+      source: "webhook-echo-sample"
+    });
+
 });
 
 
