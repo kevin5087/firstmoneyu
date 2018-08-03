@@ -50,8 +50,8 @@ app.post("/rank", function(req, res) {
     console.log('aa', mater);  
     
     return res.json({
-      speech: speech,
-      displayText: speech,
+      speech: mater,
+      displayText: mater,
       source: "webhook-echo-sample"
     });
 
