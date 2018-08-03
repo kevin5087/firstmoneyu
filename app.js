@@ -35,7 +35,7 @@ resp.on('end', () => {
 
 });
 
-app.post("/rank", function(req, res) {
+app.post("/", function(req, res) {
   var speech =
     req.body.result &&
     req.body.result.parameters &&
