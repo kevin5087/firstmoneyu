@@ -28,22 +28,20 @@ resp.on('end', () => {
 
 });
 
-app.post("/rank/:id", function(req, res) {
-    // console.log('xxxxxxxxx', name);
-    //var speech =
-    //req.body.result.parameters.id;
+app.post("/rank", function(req, res) {
+  var speech =
+    req.body.result &&
+    req.body.result.parameters &&
+    req.body.result.parameters.echoText
+      ? req.body.result.parameters.echoText
+      : "Seems like some problem. Speak again.";
     
     const test = Object.values(name.data);
-    const id = req.params.id; 
+    //const id = req.params.id; 
     console.log('id', Number(id));
-    const mater = test.filter( number => number.rank === Number(id));
+    const mater = test.filter( number => number.rank === speech);
     console.log('aa', mater);  
     
-    return res.json({
-      speech: mater,
-      displayText: master,
-      source: "webhook-echo-sample"
-    });
 });
 
 
