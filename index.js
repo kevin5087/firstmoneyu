@@ -36,18 +36,19 @@ resp.on('end', () => {
 
 app.post("/rank", function(req, res) {
   
-    console.log('aaaa', req.body);
+    const id = req.body.echoText;
     const test = Object.values(name.data);
-    const id = req.body.echoText; 
-    //console.log('id', Number(id));
     const mater = test.filter( number => number.rank === Number(id));
-    console.log('aa', mater);  
+    const ans = JSON.mater(value[mater,replacer]);
+    
     
     
 
     var speech = 
-    req.body.echoText
-      ? '${mater.name}:${mater.id}'
+    req.body.result &&
+    req.body.result.parameters &&
+    req.body.result.parameters.echoText
+      ? ans
       : "Seems like some problem. Speak again.";
      
     
