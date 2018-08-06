@@ -1,5 +1,6 @@
 "use strict";
-
+System.err.println("Hello, logs!");
+System.out.println("Hello, logs!");
 
 const express = require('express');
 const app = express(); //建立一個Express伺服器
