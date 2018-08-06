@@ -15,7 +15,7 @@ app.use(
 app.use(bodyParser.json());
 
 
-/*https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
+https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
   let data = '';  
 // A chunk of data has been recieved.
 resp.on('data', (chunk) => {
@@ -55,7 +55,7 @@ app.post("/rank", function(req, res) {
       source: "webhook-echo-sample"
     });
 
-});*/
+});
 
 
 app.listen(process.env.PORT || 8000, function() {
