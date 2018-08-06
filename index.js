@@ -15,7 +15,7 @@ app.use(
 app.use(bodyParser.json());
 
 
-https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
+/*https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
   let data = '';  
 // A chunk of data has been recieved.
 resp.on('data', (chunk) => {
@@ -32,17 +32,17 @@ resp.on('end', () => {
 }).on("error", (err) => {
     console.log("Error: " + err.message);
 
-});
+});*/
 
 app.post("/rank", function(req, res) {
   
-    console.log('aaaa', req.body);
+    /**console.log('aaaa', req.body);
     const test = Object.values(name.data);
     //const id = req.params.id; 
     console.log('id', Number(id));
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
-    console.log('aaaa', req.params.id);
+    console.log('aaaa', req.params.id);*/
 
     var speech = 
     req.body.result &&
