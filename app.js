@@ -34,15 +34,19 @@ resp.on('end', () => {
 
 });
 
-app.post("/rank", function(req, res) {
+app.post("/rank/:id", function(req, res) {
  
     const test = Object.values(name.data);
     //const id = req.params.id; 
     console.log('id', Number(id));
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
-    
-    var speech = 
+    console.log('aaaaa', req.params.id);
+    return res.json({
+      id: req.params.id
+    });
+
+    /*var speech = 
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
@@ -53,7 +57,7 @@ app.post("/rank", function(req, res) {
       speech: speech,
       displayText: mater,
       source: "webhook-echo-sample"
-    });
+    });*/
 
 });
 
