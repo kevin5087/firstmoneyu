@@ -59,9 +59,9 @@ app.post("/rank", function(req, res) {
 });
 
 
+app.listen(process.env.PORT || 8000, function() {
+  console.log("Server up and listening");
+});
 
 
-
-  app.listen(3000, function () {
-    console.log('Example app is running on port 3000!');}
-  );
+ 
