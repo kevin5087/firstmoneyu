@@ -1,6 +1,5 @@
 "use strict";
-System.err.println("Hello, logs!");
-System.out.println("Hello, logs!");
+config.logger = Logger.new(STDOUT);
 
 const express = require('express');
 const app = express(); //建立一個Express伺服器
