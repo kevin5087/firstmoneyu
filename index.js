@@ -49,7 +49,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? mater
+      ? '${mater.name}:${mater.id}'
       : "Seems like some problem. Speak again.";
      
     
