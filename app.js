@@ -1,5 +1,4 @@
 "use strict";
-config.logger = Logger.new(STDOUT);
 
 const express = require('express');
 const app = express(); //建立一個Express伺服器
@@ -16,7 +15,7 @@ app.use(
 app.use(bodyParser.json());
 
 
-https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
+/*https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
   let data = '';  
 // A chunk of data has been recieved.
 resp.on('data', (chunk) => {
@@ -33,7 +32,7 @@ resp.on('end', () => {
 }).on("error", (err) => {
     console.log("Error: " + err.message);
 
-});
+});*/
 
 app.post("/rank", function(req, res) {
  
