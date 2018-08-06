@@ -14,7 +14,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-
+console.log('aaaa', req.body);
 https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
   let data = '';  
 // A chunk of data has been recieved.
@@ -34,9 +34,9 @@ resp.on('end', () => {
 
 });
 
-app.post("/rank", function(req, res) {
+app.post("/", function(req, res) {
   
-    console.log('aaaa', req.body);
+    //console.log('aaaa', req.body);
     const test = Object.values(name.data);
     //const id = req.params.id; 
     console.log('id', Number(id));
