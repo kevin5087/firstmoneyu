@@ -46,9 +46,7 @@ app.post("/rank", function(req, res) {
     
 
     var speech = 
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
+    req.body.echoText
       ? '${mater.name}:${mater.id}'
       : "Seems like some problem. Speak again.";
      
