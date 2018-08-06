@@ -14,7 +14,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-console.log('aaaa', req.body);
+
 https.get('https://api.coinmarketcap.com/v2/ticker/', (resp) => {
   let data = '';  
 // A chunk of data has been recieved.
@@ -34,9 +34,9 @@ resp.on('end', () => {
 
 });
 
-app.post("/", function(req, res) {
+app.post("/rank", function(req, res) {
   
-    //console.log('aaaa', req.body);
+    console.log('aaaa', req.body);
     const test = Object.values(name.data);
     //const id = req.params.id; 
     console.log('id', Number(id));
@@ -48,13 +48,13 @@ app.post("/", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
+      ? req.body.result.parameters.echoText + "123"
       : "Seems like some problem. Speak again.";
      
     
     return res.json({
       speech: speech,
-      displayText: mater,
+      displayText: speech,
       source: "webhook-echo-sample"
     });
 
