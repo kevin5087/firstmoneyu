@@ -35,20 +35,22 @@ resp.on('end', () => {
 });
 
 app.post("/rank", function(req, res) {
- 
+  
+    console.log('aaaa', req.body);
     const test = Object.values(name.data);
     //const id = req.params.id; 
     console.log('id', Number(id));
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
-   
+    console.log('aaaa', req.params.id);
 
     var speech = 
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? mater
+      ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
+     
     
     return res.json({
       speech: speech,
