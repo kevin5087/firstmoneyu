@@ -43,7 +43,7 @@ app.post("/rank", function(req, res) {
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
     
-    var mater = 
+    var speech = 
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
@@ -51,7 +51,7 @@ app.post("/rank", function(req, res) {
       : "Seems like some problem. Speak again.";
     
     return res.json({
-      speech: mater,
+      speech: speech,
       displayText: mater,
       source: "webhook-echo-sample"
     });
