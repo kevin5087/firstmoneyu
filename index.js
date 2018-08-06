@@ -43,6 +43,7 @@ app.post("/rank", function(req, res) {
     const mater = test.filter( number => number.rank === Number(id));
     console.log('aa', mater);  
     console.log('aaaa', req.params.id);*/
+    console.log('aaaa', req.body);
 
     var speech = 
     req.body.result &&
