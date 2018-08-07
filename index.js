@@ -58,7 +58,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? `${mma}:的本日價格是:${money}}`
+      ? `${mma}:的本日價格是:${money}`
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
 
