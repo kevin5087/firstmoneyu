@@ -58,16 +58,16 @@ app.post("/rank", function(req, res) {
     //const ans = JSON.stringify(mater);
     //const loby = JSON.stringify(mater.rank);
     //console.log('aaaaa', ans);
-    const ans = `${mma}的現在價格是:${money},\n在一小時浮動為:${hour}(%),\n24小時內浮動為:${day}(%),\n在一個禮拜的浮動為:${week}(%),\n現在循環供應為:${circulating},\n總供應為:${total},\n最大供應為:${max},\n此資料的最後更新時間為${time},\n請再次輸入想查詢的貨幣。`;
-    function replaceLineBreaksWithHTML(string) {
-      return string !== undefined ? string.replace(/\n/g, '<br/>') : "";
-     }
+    const ans = `${mma}的現在價格是:${money},在一小時浮動為:${hour}(%),24小時內浮動為:${day}(%),在一個禮拜的浮動為:${week}(%),現在循環供應為:${circulating},總供應為:${total},最大供應為:${max},此資料的最後更新時間為${time},請再次輸入想查詢的貨幣。`;
+    //function replaceLineBreaksWithHTML(string) {
+      //return string !== undefined ? string.replace(/\n/g, '<br/>') : "";
+     //}
 
     var speech = 
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? replaceLineBreaksWithHTML(ans)
+      ? ans
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
 
