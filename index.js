@@ -40,15 +40,15 @@ app.post("/rank", function(req, res) {
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
     //const ans = JSON.mater(value[mater,replacer]);
-    const loby = JSON.stringify(mater.rank);
-    
+    //const loby = JSON.stringify(mater.rank);
+    debug.innerText = JSON.stringify(mater);
     
 
     var speech = 
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? loby+'123'
+      ? debug.innerText
       : "Seems like some problem. Speak again.";
      
     
