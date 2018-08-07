@@ -42,7 +42,7 @@ app.post("/rank", function(req, res) {
     //console.log(typeof mater);
     //console.log('asdff', JSON.stringify(mater));
     const mma = mater[0].name;
-    const money = mater[0].quotes[0].USD[0].price;
+    const money = mater[0].quotes.USD.price;
     //const max = d
     //console.log('aaaaa', mma);
     
