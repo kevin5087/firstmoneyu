@@ -36,7 +36,7 @@ resp.on('end', () => {
 
 app.post("/rank", function(req, res) {
   
-    /*const id = req.body.echoText;
+    const id = req.body.result.parameters.echoText;
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
     //console.log(typeof mater);
@@ -48,7 +48,7 @@ app.post("/rank", function(req, res) {
     //console.log('aaa', mater);
     //const ans = JSON.stringify(mater);
     //const loby = JSON.stringify(mater.rank);
-    //console.log('aaaaa', ans);*/
+    //console.log('aaaaa', ans);
     
     
 
@@ -56,7 +56,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText+'123'
+      ? mma
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
 
