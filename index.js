@@ -52,17 +52,17 @@ app.post("/rank", function(req, res) {
     
     
 
-    //var speech = mma ;
-    console.log(typeof mma);
+    var speech = '123' ;
+    //console.log(typeof mma);
 
 
      
     
-    /*return res.json({
+    return res.json({
       speech: speech,
       displayText: speech,
       source: "webhook-echo-sample"
-    });*/
+    });
 
 });
 
