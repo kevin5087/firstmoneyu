@@ -38,9 +38,9 @@ app.post("/rank", function(req, res) {
   
     const id = req.body.echoText;
     const test = Object.values(name.data);
-    const mater = test.filter( number => number.rank === speech);
+    const mater = test.filter( number => number.rank === Number(id));
     //const ans = JSON.mater(value[mater,replacer]);
-    const loby = mater.id;
+    const loby = JSON.stringify(value[mater,replacer]);
     
     
 
