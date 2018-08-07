@@ -36,7 +36,7 @@ resp.on('end', () => {
 
 app.post("/rank", function(req, res) {
   
-    const id = req.body.echoText;
+    const id =req.body.echoText;
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
     //console.log(typeof mater);
@@ -52,16 +52,17 @@ app.post("/rank", function(req, res) {
     
     
 
-    var speech = mma ;
+    //var speech = mma ;
+    console.log(typeof mma);
 
 
      
     
-    return res.json({
+    /*return res.json({
       speech: speech,
       displayText: speech,
       source: "webhook-echo-sample"
-    });
+    });*/
 
 });
 
