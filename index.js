@@ -48,7 +48,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? loby
+      ? loby+'123'
       : "Seems like some problem. Speak again.";
      
     
