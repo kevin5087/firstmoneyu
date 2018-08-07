@@ -42,6 +42,7 @@ app.post("/rank", function(req, res) {
     //console.log(typeof mater);
     //console.log('asdff', JSON.stringify(mater));
     const mma = mater[0].name;
+    const max = d
     //console.log('aaaaa', mma);
     
     
@@ -56,7 +57,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? mma
+      ? `${mma}:的本日最高是:`
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
 
