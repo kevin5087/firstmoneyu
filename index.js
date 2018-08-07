@@ -40,17 +40,14 @@ app.post("/rank", function(req, res) {
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
     //console.log('aaa', mater);
-    const ans = JSON.mater(value[mater,replacer]);
-    const loby = JSON.stringify(mater.rank);
+    //const ans = JSON.mater(value[mater,replacer]);
+    //const loby = JSON.stringify(mater.rank);
     
     
 
-    var speech = 
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? mater
-      : "Seems like some problem. Speak again.";
+    var speech = mater;
+
+
      
     
     return res.json({
