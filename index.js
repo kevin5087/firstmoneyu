@@ -1,4 +1,4 @@
-
+"use strict";
 
 const express = require('express');
 const app = express(); //建立一個Express伺服器
@@ -48,7 +48,7 @@ app.post("/rank", function(req, res) {
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
-      ? mater
+      ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
      
     
