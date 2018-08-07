@@ -36,17 +36,23 @@ resp.on('end', () => {
 
 app.post("/rank", function(req, res) {
   
-    const id = Number(req.body.echoText);
+    const id = req.body.echoText;
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
+    console.log(typeof mater);
+    console.log('asdff', JSON.stringify(mater));
+    const mma = mater[0].name;
+    console.log('aaaaa', mma);
+    
+    
     //console.log('aaa', mater);
-    const ans = JSON.stringify(mater);
+    //const ans = JSON.stringify(mater);
     //const loby = JSON.stringify(mater.rank);
     //console.log('aaaaa', ans);
     
     
 
-    var speech = ans ;
+    var speech = mma ;
 
 
      
