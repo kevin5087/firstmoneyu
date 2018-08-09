@@ -35,10 +35,12 @@ resp.on('end', () => {
 });
 
 app.post("/rank", function(req, res) {
-  
+
+    const lol = req.body.result.parameters.echo;
     const id = req.body.result.parameters.echoText;
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
+    const text = test.filter( number => number.rank === Number(lol));
     const mma = mater[0].name;
     const money = mater[0].quotes.USD.price;
     const circulating = mater[0].circulating_supply;
@@ -47,7 +49,7 @@ app.post("/rank", function(req, res) {
     const hour = mater[0].quotes.USD.percent_change_1h;
     const day = mater[0].quotes.USD.percent_change_24h;
     const week = mater[0].quotes.USD.percent_change_7d;
- 
+    const aaaaaaa = text[0].name;
 
 
     const ans = `${mma}的現在價格是:${money},
@@ -67,16 +69,18 @@ app.post("/rank", function(req, res) {
       ? ans
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
-    /*var speeh =
+    var textxt =
     req.body.result &&
     req.body.result.parameters &&
-    req.body.result.parameters.echoText
-    ? */
+    req.body.result.parameters.echo
+      ? aaaaaaa
+      : "ssssss"; 
 
      
     
     return res.json({
       speech: speech,
+      textxt: textxt,
       displayText: speech,
       source: "webhook-echo-sample"
     });
