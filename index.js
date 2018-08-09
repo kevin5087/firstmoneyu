@@ -39,8 +39,6 @@ app.post("/rank", function(req, res) {
     const id = req.body.result.parameters.echoText;
     const test = Object.values(name.data);
     const mater = test.filter( number => number.rank === Number(id));
-    //console.log(typeof mater);
-    //console.log('asdff', JSON.stringify(mater));
     const mma = mater[0].name;
     const money = mater[0].quotes.USD.price;
     const circulating = mater[0].circulating_supply;
@@ -49,20 +47,19 @@ app.post("/rank", function(req, res) {
     const hour = mater[0].quotes.USD.percent_change_1h;
     const day = mater[0].quotes.USD.percent_change_24h;
     const week = mater[0].quotes.USD.percent_change_7d;
-    const time = mater[0].quotes.last_updated;
-    //const max = d
-    //console.log('aaaaa', mma);
-    
-    
-    //console.log('aaa', mater);
-    //const ans = JSON.stringify(mater);
-    //const loby = JSON.stringify(mater.rank);
-    //console.log('aaaaa', ans);
-    const ans = `${mma}的現在價格是:${money},在一小時浮動為:${hour}(%),24小時內浮動為:${day}(%),在一個禮拜的浮動為:${week}(%),現在循環供應為:${circulating},總供應為:${total},最大供應為:${max},此資料的最後更新時間為${time},請再次輸入想查詢的貨幣。`;
-    //function replaceLineBreaksWithHTML(string) {
-      //return string !== undefined ? string.replace(/\n/g, '<br/>') : "";
-     //}
+ 
 
+
+    const ans = `${mma}的現在價格是:${money},
+    在一小時浮動為:${hour}(%),
+    24小時內浮動為:${day}(%),
+    在一個禮拜的浮動為:${week}(%),
+    現在循環供應為:${circulating},
+    總供應為:${total},
+    最大供應為:${max},
+    每三分鐘更新一次,
+    請再次輸入想查詢的貨幣。`;
+  
     var speech = 
     req.body.result &&
     req.body.result.parameters &&
@@ -70,7 +67,11 @@ app.post("/rank", function(req, res) {
       ? ans
       : "Seems like some problem. Speak again.";
     //console.log(typeof mma);
-
+    /*var speeh =
+    req.body.result &&
+    req.body.result.parameters &&
+    req.body.result.parameters.echoText
+    ? */
 
      
     
